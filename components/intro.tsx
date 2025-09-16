@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { BsArrowRight, BsLinkedin } from 'react-icons/bs';
 import { HiDownload } from 'react-icons/hi';
-import { FaGithub } from 'react-icons/fa';
+
 import { useSectionInView } from '@/lib/hooks';
 import { useActiveSectionContext } from '@/context/active-section-context';
 import imagenProfile from '@/public/profile-pic.jpg';
@@ -58,7 +58,7 @@ export default function Intro() {
 
             <a
               className="flex items-center gap-2 py-3 transition bg-white rounded-full outline-none cursor-pointer px-7 font-outfit group focus:scale-110 hover:scale-110 active:scale-105 borderBlack dark:bg-white/10"
-              href="/Cv-Pedro-Moreno-Frontend-2025.pdf"
+              href="/CV-GERALDINE-RODRIGUEZ-SIERRA.pdf"
               download
             >
               Download CV <HiDownload className="transition opacity-60 group-hover:translate-y-1" />
@@ -66,7 +66,7 @@ export default function Intro() {
 
             <a
               className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-              href="https://www.linkedin.com/in/pedromorenodev/"
+              href="https://www.linkedin.com/in/geraldinerodriguezs/"
               target="_blank"
             >
               <BsLinkedin />
@@ -74,7 +74,7 @@ export default function Intro() {
 
             <a
               className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-              href="https://wa.me/573104416178"
+              href="https://wa.link/27gkfi"
               target="_blank"
             >
               <FaWhatsapp />
