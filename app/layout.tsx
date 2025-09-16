@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className="!scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${outfit.className} ${ovo.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
+        className={`${outfit.className} ${ovo.className} bg-gray-50 text-gray-950 relative  dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
       >
         <ThemeContextProvider>
           <ActiveSectionContextProvider>

@@ -4,8 +4,8 @@ import { FaReact } from 'react-icons/fa';
 import { LuGraduationCap } from 'react-icons/lu';
 
 import dePratiImg from '@/public/deprati.png';
-import dugodoImg from '@/public/dugodo.png';
-import buuclyImg from '@/public/buucly.png';
+import venturaLegalDesign from '@/public/ventura-legal-portatil.webp';
+import buuclyLegalDesign from '@/public/buubly-legal-de.webp';
 
 export const links = [
   {
@@ -36,93 +36,56 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: 'Frontend Software Engineer',
-    location: 'Leasey AI - Canada - Remoto',
-    description: 'HTLM, CSS, JavaScript, Typescript, React js, Next js, Node.js, AWS',
-    icon: React.createElement(CgWorkAlt),
-    date: 'Enero 2025 - present',
-  },
-  {
-    title: 'Full-Stack Instructor in web development',
-    location: 'Soy Henry - Full Remoto',
+    title: 'Abogada',
+    location: 'Nicolás Pareja & Asociados Abogados',
     description:
-      'Instructor/profesor de desarrollo web frontend y backend modalidad part time. He enseñado a más de 100 estudiantes, abarcando temas como Programación orientada a objetos, testing, HTLM, CSS, JavaScript, Typescript, React js, Next js, Node.js, Express.js, Nest js, MongoDB y PostgresSQL',
+      'Asesoría legal integral en propiedad intelectual, protección de datos, derecho comercial y protección al consumidor. Implementación de metodología Legal Design para documentos más claros y accesibles. Liderazgo en rediseño web, marketing de contenidos y gestión comercial.',
     icon: React.createElement(CgWorkAlt),
-    date: 'Julio 2024 - present',
+    date: 'Febrero 2022 - Actual',
   },
   {
-    title: 'Frontend Developer | React Developer',
-    location: 'Mutual SER',
-    description: `Desarrollé mejoras, una aplicación web con React para poder hacer cargas masivas  de archivos, documentos y carpetas. Mejorando la visualización de carga y rendimiento de la aplicación en el navegador en un 40%`,
-    icon: React.createElement(FaReact),
-    date: '2022 - 2024',
-  },
-  {
-    title: 'Ingeniero en desarrollo Drupal/Desarrollador React Native',
-    location: 'Software One/Intergrupo - Full Remoto',
+    title: 'Asesora Legal Independiente',
+    location: 'Freelance',
     description:
-      'Logré puntuación alta en rendimiento para un proyecto de desarrollo de software frontend de un cliente reconocido a nivel nacional, reconocimiento en la adaptación técnica del perfil, calidad y compromiso.',
+      'Asesoría a emprendedores en constitución de SAS, registro de marcas y elaboración de términos y condiciones. Estructuración legal y cumplimiento normativo para nuevos negocios.',
     icon: React.createElement(CgWorkAlt),
-    date: '2022',
+    date: 'Agosto 2021 - Febrero 2022',
   },
   {
-    title: 'Desarrollador Frontend / DIseñador UI ',
-    location: 'Adomi Delivery - Full Remoto',
+    title: 'Judicante',
+    location: 'Defensoría del Pueblo - Regional Bolívar',
     description:
-      'Aumenté las ganancias por delivery en la empresa, logrando diseñar, maquetar y desarrollar una plataforma de recaudo con react js, integrando mercado pago para cobro de comisiones por domicilio. Logré desarrollar una app de gestión de pedidos en web, basado en el flujo de la app móvil. Esto permitió a la empresa gestionar los pedidos en un solo lugar. Tecnologias: React, Next Js, MongoDB, Express js, cloudfare',
-    icon: React.createElement(FaReact),
-    date: '2021 - 2022',
+      'Revisión y proyección de acciones constitucionales, redacción y contestación de demandas en derecho civil, administrativo y laboral. Creación y gestión de base de datos de procesos.',
+    icon: React.createElement(LuGraduationCap),
+    date: 'Marzo 2020 - Diciembre 2020',
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: 'De Prati',
-    description:
-      "Trabajé 8 meses una aplicación móvil tipo 'Marketplace' con React Native. La aplicación incluyó características clave como gestión de microcréditos, pagos con tarjeta de crédito, catálogo de productos de varias marcas y gestión de envío a domicilio. ",
-    tags: ['React Native', 'Redux Toolkit', 'RTK Query', 'React Native Material', 'Figma'],
-    imageUrl: dePratiImg,
+    title: 'Buucly.com App: Rediseño de Política de Privacidad con enfoque en Legal Design',
+    description: `En colaboración con Miguel Ruz (Diseñador UX, Bancolombia), desarrollamos un prototipo de política de privacidad para Buucly integrando Legal Design Thinking y UX. Combinamos análisis jurídico de normativa colombiana con principios de experiencia de usuario, logrando documentos legales más claros y accesibles mediante patrones visuales innovadores.`,
+
+    tags: [],
+    imageUrl: buuclyLegalDesign,
   },
   {
-    title: 'Dugodo App',
-    description:
-      'Trabajé un año como freelance una app móvil desarrollada con React Native, tipo red social para viajeros llamada Dugodo',
-    tags: ['React Native CLI', 'Redux Toolkit', 'TypeScript', 'Apolo Client', 'GraphQL', 'Express js'],
-    imageUrl: dugodoImg,
-  },
-  {
-    title: 'Buucly.com App',
-    description:
-      'Desarrollé una plataforma que permite crear libros personalizados al instante utilizando inteligencia artificial. Usando  el modelo GPT-4o de OpenAI, los usuarios pueden generar libros sobre cualquier tema en minutos. La plataforma incluye una biblioteca virtual, vista previa de contenido antes de la generación final, y opción de lectura dentro de la app',
-    tags: ['React Js', 'Next.js', 'Tailwind', 'TypeScript', 'Shadcn UI', 'Prisma', 'Supabase', 'OpenAI'],
-    imageUrl: buuclyImg,
+    title: 'Ventura Foods: Rediseño de Reglamento Interno de Trabajo con enfoque en Legal Design',
+    description: `En colaboración con Milena Álvarez (Laboralizate), rediseñamos el Reglamento Interno de Trabajo de Ventura Foods aplicando Legal Design para convertirlo en un documento claro, visual y útil para los trabajadores. Incorporamos lenguaje claro, elementos gráficos e íconos, apoyo narrativo y una estructura práctica que fortalece la cultura organizacional y el cumplimiento.`,
+    tags: [],
+    imageUrl: venturaLegalDesign,
   },
 ] as const;
 
 export const skillsData = [
-  'HTML',
-  'CSS',
-  'JavaScript',
-  'TypeScript',
-  'React',
-  'Next.js',
-  'React Native',
-  'Node.js',
-  'Git',
-  'Tailwind',
-  'TypeORM',
-  'Prisma',
-  'SQL',
-  'MongoDB',
-  'Firebase',
-  'Supabase',
-  'Redux Toolkit',
-  'React Query',
-  'Redux',
-  'GraphQL',
-  'Apollo',
-  'Nest.js',
-  'Express',
-  'PostgreSQL',
-  'Python',
+  'Redacción y análisis de contratos comerciales',
+  'Propiedad Intelectual y Protección de Datos',
+  'Docencia en temas de innovación legal y transformación digital',
+  'Diseño de documentos legales con enfoque en Legal Design Thinking',
+  'Registro de Marcas',
+  'Office (Word, PowerPoint avanzado, Excel intermedio)',
+  'Edición de contenido en Adobe Suite (Premiere Pro, Illustrator, InDesign)',
+  'Creación de contenido digital: podcast, videos y material gráfico',
+  'Manejo de bases de datos y CRM (Hubspot)',
+  'Organización de proyectos',
 ] as const;
