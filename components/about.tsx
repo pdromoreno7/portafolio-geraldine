@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import React from "react";
-import SectionHeading from "./section-heading";
-import { motion } from "framer-motion";
-import { useSectionInView } from "@/lib/hooks";
+import React from 'react';
+import SectionHeading from './section-heading';
+import { motion } from 'framer-motion';
+import { useSectionInView } from '@/lib/hooks';
 
 export default function About() {
-  const { ref } = useSectionInView("About");
+  const { ref } = useSectionInView('About');
 
   return (
     <motion.section
@@ -18,66 +18,28 @@ export default function About() {
       id="about"
     >
       <SectionHeading>Acerca de mi</SectionHeading>
-      <p className="mb-3">
-        {" "}
-        Con más de <span className="font-medium">3 años de experiencia</span> en
-        desarrollo web y móvil, he perfeccionado mis habilidades como{" "}
-        <span className="font-medium">
-          Desarrollador Frontend JavaScript/React
-        </span>
-        . Mi camino en la tecnología comenzó desde joven, impulsado por mi
-        pasión por{" "}
-        <span className="font-medium">la computación y la innovación</span>. A
-        lo largo de mi carrera, he entregado{" "}
-        <span className="font-medium">más de 10 proyectos exitosos</span> tanto
-        para startups como para empresas de nivel empresarial, creando
-        soluciones robustas con tecnologías como{" "}
-        <span className="font-medium">
-          React, React Native, Next.js, Node.js y Nest.js
-        </span>
-        . También soy competente en herramientas y prácticas como{" "}
-        <span className="font-medium">
-          Git Flow, principios SOLID, pruebas unitarias, pruebas end to end,
-          arquitectura limpia, CI/CD
-        </span>{" "}
-        y microfrontends.{" "}
-      </p>{" "}
-      <p className="mb-3">
-        {" "}
-        Uno de mis logros más emocionantes ha sido liderar el desarrollo de{" "}
-        <a href="https://buucly.com/" target="_blank" className="italic">
-          Buucly.com
-        </a>
-        , una plataforma en beta que utiliza{" "}
-        <span className="font-medium">inteligencia artificial</span> para
-        generar libros personalizados al instante. Este proyecto me permitió
-        combinar mi experiencia técnica con mi pasión por construir herramientas
-        que mejoren la productividad y la creatividad.{" "}
-      </p>{" "}
-      <p className="mb-3">
-        {" "}
-        <span className="italic">Mi parte favorita de la programación</span> es
-        enfrentar problemas complejos y crear soluciones escalables y de alta
-        calidad. Estoy en constante aprendizaje y mejora, explorando nuevas
-        tecnologías como{" "}
-        <span className="font-medium">
-          TypeScript, Prisma, Docker, PostgreSQL y MongoDB
-        </span>
-        . Mi compromiso con la innovación y el código limpio está en el núcleo
-        de mi proceso de desarrollo.{" "}
-      </p>{" "}
-      <p>
-        {" "}
-        <span className="italic">Cuando no estoy programando</span>, disfruto
-        explorando la intersección entre{" "}
-        <span className="font-medium">
-          tecnología, historia y filosofía politica
-        </span>
-        . También me encanta aprender nuevas habilidades y desafiarme a mí
-        mismo. Actualmente, estoy profundizando en nuevos frameworks de
-        programación y disfrutando de pasatiempos como tocar música y enseñar
-        desarrollo web a otros.{" "}
-      </p>
+      <div className="font-outfit">
+        <p className="mb-3">
+          Soy <strong className="font-bold">Geraldine Rodríguez Sierra</strong>, abogada con más de tres años de
+          experiencia asesorando a empresas y emprendedores en áreas como{' '}
+          <strong className="font-bold">derecho corporativo, propiedad intelectual y protección de datos</strong>. A lo
+          largo de mi carrera, he combinado el conocimiento jurídico con la innovación, liderando proyectos que integran{' '}
+          <strong className="font-bold">Legal Design Thinking</strong>, transformación digital y comunicación
+          estratégica para ofrecer soluciones jurídicas claras, accesibles y orientadas al negocio.
+        </p>
+        <p className="mb-3">
+          Mi pasión por la tecnología me llevó a especializarme en <strong className="font-bold">Legaltech</strong>,
+          actualmente como{' '}
+          <strong className="font-bold">candidata a Magíster en Innovación en Derecho Digital y Legaltech</strong>. He
+          desarrollado e implementado iniciativas de diseño legal, rediseño de procesos documentales y estrategias
+          digitales para firmas legales, generando impacto tanto en la experiencia del usuario como en la eficiencia
+          operativa.
+        </p>
+        <p className="mb-3">
+          Disfruto aprender y enseñar, y me interesa profundamente la intersección entre el Derecho, el diseño y la
+          tecnología. Creo firmemente que el futuro del Derecho es más colaborativo, visual y centrado en las personas.
+        </p>
+      </div>
     </motion.section>
   );
 }

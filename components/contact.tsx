@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
-import SectionHeading from "./section-heading";
-import { motion } from "framer-motion";
-import { useSectionInView } from "@/lib/hooks";
-import { sendEmail } from "@/actions/sendEmail";
-import SubmitBtn from "./submit-btn";
-import toast from "react-hot-toast";
-import { FaWhatsapp } from "react-icons/fa";
+import React, { useEffect, useState } from 'react';
+import SectionHeading from './section-heading';
+import { motion } from 'framer-motion';
+import { useSectionInView } from '@/lib/hooks';
+import { sendEmail } from '@/actions/sendEmail';
+import SubmitBtn from './submit-btn';
+import toast from 'react-hot-toast';
+import { FaWhatsapp } from 'react-icons/fa';
 
 export default function Contact() {
   const [isMounted, setIsMounted] = useState(false);
-  const { ref } = useSectionInView("Contacto");
+  const { ref } = useSectionInView('Contacto');
 
   useEffect(() => {
     setIsMounted(true);
@@ -40,10 +40,10 @@ export default function Contact() {
       <SectionHeading>Contáctame</SectionHeading>
 
       <p className="-mt-6 text-gray-700 dark:text-white/80">
-        Por favor contáctame directamente a mi correo{" "}
-        <a className="underline" href="mailto:pdromorenodev@gmail.com">
-          pdromorenodev@gmail.com
-        </a>{" "}
+        Por favor contáctame directamente a mi correo{' '}
+        <a className="underline" href="mailto:geraldinerodriguezsierra@gmail.com">
+          geraldinerodriguezsierra@gmail.com
+        </a>{' '}
         o a través del formulario:
       </p>
 
@@ -57,7 +57,7 @@ export default function Contact() {
             return;
           }
 
-          toast.success("Email enviado con exito");
+          toast.success('Email enviado con exito');
         }}
       >
         <input
