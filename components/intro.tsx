@@ -9,7 +9,7 @@ import { HiDownload } from 'react-icons/hi';
 
 import { useSectionInView } from '@/lib/hooks';
 import { useActiveSectionContext } from '@/context/active-section-context';
-import imagenProfile from '@/public/profile-pic.jpg';
+import imagenProfile from '@/public/gera-medellin.jpg';
 import { FaWhatsapp } from 'react-icons/fa';
 
 export default function Intro() {
@@ -17,7 +17,11 @@ export default function Intro() {
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
-    <section ref={ref} id="home" className="flex items-center justify-center min-h-screen max-w-[70rem] mx-auto px-4">
+    <section
+      ref={ref}
+      id="home"
+      className="flex items-center justify-center min-h-screen max-w-[70rem] mx-auto px-4 pt-24 pb-8 sm:pt-28 sm:pb-12 md:pt-20"
+    >
       <div className="flex flex-col items-center w-full gap-8 md:flex-row">
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
@@ -29,7 +33,7 @@ export default function Intro() {
         >
           <Image
             src={imagenProfile}
-            alt="Pedro Moreno portrait"
+            alt="Geraldine Rodriguez portrait"
             width="400"
             height="400"
             quality="95"
