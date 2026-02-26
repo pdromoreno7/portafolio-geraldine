@@ -11,8 +11,20 @@ const outfit = Outfit({ subsets: ['latin'], weight: ['400', '500', '600', '700']
 const ovo = Ovo({ subsets: ['latin'], weight: ['400'] });
 
 export const metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://geraldinerodriguez.com'),
   title: 'Geraldine Rodriguez | Personal Portfolio',
-  description: 'Geraldine Rodriguez is a full-stack developer with 3 years of experience.',
+  description: 'ABOGADA | INNOVACIÓN EN DERECHO DIGITAL & LEGALTECH | LEGALDESIGN | IP',
+  openGraph: {
+    title: 'Geraldine Rodriguez | Personal Portfolio',
+    description: 'ABOGADA | INNOVACIÓN EN DERECHO DIGITAL & LEGALTECH | LEGALDESIGN | IP',
+    images: ['/gera-medellin.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Geraldine Rodriguez | Personal Portfolio',
+    description: 'ABOGADA | INNOVACIÓN EN DERECHO DIGITAL & LEGALTECH | LEGALDESIGN | IP',
+    images: ['/gera-medellin.jpg'],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
