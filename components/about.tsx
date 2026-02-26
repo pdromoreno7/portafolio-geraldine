@@ -29,9 +29,8 @@ export default function About() {
         </p>
         <p className="mb-3">
           Mi pasión por la tecnología me llevó a especializarme en <strong className="font-bold">Legaltech</strong>,
-          actualmente como{' '}
-          <strong className="font-bold">candidata a Magíster en Innovación en Derecho Digital y Legaltech</strong>. He
-          desarrollado e implementado iniciativas de diseño legal, rediseño de procesos documentales y estrategias
+          actualmente como <strong className="font-bold">Magíster en Innovación en Derecho Digital y Legaltech</strong>.
+          He desarrollado e implementado iniciativas de diseño legal, rediseño de procesos documentales y estrategias
           digitales para firmas legales, generando impacto tanto en la experiencia del usuario como en la eficiencia
           operativa.
         </p>
