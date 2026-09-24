@@ -1,38 +1,51 @@
 import Header from '@/components/header';
+import BootScreen from '@/components/boot-screen';
 import './globals.css';
-import { Outfit, Ovo } from 'next/font/google';
+import { Merriweather, Outfit } from 'next/font/google';
 import ActiveSectionContextProvider from '@/context/active-section-context';
 import Footer from '@/components/footer';
 import ThemeSwitch from '@/components/theme-switch';
 import ThemeContextProvider from '@/context/theme-context';
 import { Toaster } from 'react-hot-toast';
 
-const outfit = Outfit({ subsets: ['latin'], weight: ['400', '500', '600', '700'] });
-const ovo = Ovo({ subsets: ['latin'], weight: ['400'] });
+const display = Merriweather({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-display',
+});
+
+const sans = Outfit({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-sans',
+});
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://geraldinerodriguez.com'),
-  title: 'Geraldine Rodriguez | Personal Portfolio',
-  description: 'ABOGADA | INNOVACIÓN EN DERECHO DIGITAL & LEGALTECH | LEGALDESIGN | IP',
+  title: 'Geraldine Rodríguez | Legal Design',
+  description: 'Abogada | Innovación en derecho digital y Legaltech | Legal Design | Propiedad intelectual',
   openGraph: {
-    title: 'Geraldine Rodriguez | Personal Portfolio',
-    description: 'ABOGADA | INNOVACIÓN EN DERECHO DIGITAL & LEGALTECH | LEGALDESIGN | IP',
+    title: 'Geraldine Rodríguez | Legal Design',
+    description: 'Abogada | Innovación en derecho digital y Legaltech | Legal Design | Propiedad intelectual',
     images: ['/gera-medellin.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Geraldine Rodriguez | Personal Portfolio',
-    description: 'ABOGADA | INNOVACIÓN EN DERECHO DIGITAL & LEGALTECH | LEGALDESIGN | IP',
+    title: 'Geraldine Rodríguez | Legal Design',
+    description: 'Abogada | Innovación en derecho digital y Legaltech | Legal Design | Propiedad intelectual',
     images: ['/gera-medellin.jpg'],
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className="!scroll-smooth" suppressHydrationWarning>
-      <body
-        className={`${outfit.className} ${ovo.className} bg-gray-50 text-gray-950 relative  dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
-      >
+    <html lang="es" className={`!scroll-smooth ${display.variable} ${sans.variable}`} suppressHydrationWarning>
+      <body className={`${sans.className} bg-paper text-ink relative`}>
+        <BootScreen />
+        <noscript>
+          <style>{`#boot-screen{display:none!important}`}</style>
+        </noscript>
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <Header />

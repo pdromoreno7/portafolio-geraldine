@@ -7,13 +7,25 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        paper: 'var(--paper)',
+        ink: 'var(--ink)',
+        muted: 'var(--muted)',
+        field: 'var(--field)',
+        mint: 'var(--mint)',
+        violet: 'var(--violet)',
+        ember: 'var(--ember)',
+        'ember-deep': 'var(--ember-deep)',
       },
       fontFamily: {
-        outfit: ['Outfit', 'sans-serif'],
-        ovo: ['Ovo', 'serif'],
+        display: ['var(--font-display)', 'Georgia', 'serif'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+      },
+      borderRadius: {
+        oval: '50%',
+      },
+      boxShadow: {
+        plate: '0 18px 40px -18px rgba(12, 138, 102, 0.35)',
       },
     },
   },

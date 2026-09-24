@@ -1,82 +1,82 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import SectionHeading from './section-heading';
 import { motion } from 'framer-motion';
 import { useSectionInView } from '@/lib/hooks';
 import { sendEmail } from '@/actions/sendEmail';
 import SubmitBtn from './submit-btn';
 import toast from 'react-hot-toast';
-import { FaWhatsapp } from 'react-icons/fa';
 
 export default function Contact() {
-  const [isMounted, setIsMounted] = useState(false);
   const { ref } = useSectionInView('Contacto');
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-  if (!isMounted) {
-    return null; // o un placeholder/skeleton
-  }
   return (
     <motion.section
       id="contact"
       ref={ref}
-      className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
+      className="mb-20 w-full max-w-[90rem] scroll-mt-28 px-5 sm:mb-28 sm:px-8 lg:px-12"
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: true }}
     >
-      <SectionHeading>Contáctame</SectionHeading>
+      <div className="overflow-hidden rounded-[2rem] bg-field px-6 py-10 text-paper sm:px-10 sm:py-14 lg:px-16">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
+          <div>
+            <SectionHeading align="left">Contáctame</SectionHeading>
+            <p className="max-w-[42ch] text-[1.05rem] leading-7 text-paper/85">
+              Escribe a{' '}
+              <a className="underline decoration-paper/50 underline-offset-4" href="mailto:geraldinerodriguezsierra@gmail.com">
+                geraldinerodriguezsierra@gmail.com
+              </a>{' '}
+              o usa el formulario. Si buscas una pieza de Legal Design o un documento para tu equipo, cuéntame el
+              contexto.
+            </p>
+          </div>
 
-      <p className="-mt-6 text-gray-700 dark:text-white/80">
-        Por favor contáctame directamente a mi correo{' '}
-        <a className="underline" href="mailto:geraldinerodriguezsierra@gmail.com">
-          geraldinerodriguezsierra@gmail.com
-        </a>{' '}
-        o a través del formulario:
-      </p>
+          <form
+            className="flex flex-col rounded-2xl bg-paper p-5 text-ink sm:p-7"
+            action={async (formData) => {
+              const { error } = await sendEmail(formData);
 
-      <form
-        className="flex flex-col mt-10 dark:text-black"
-        action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
+              if (error) {
+                toast.error(error);
+                return;
+              }
 
-          if (error) {
-            toast.error(error);
-            return;
-          }
-
-          toast.success('Email enviado con exito');
-        }}
-      >
-        <input
-          className="px-4 transition-all rounded-lg h-14 borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 dark:outline-none"
-          name="senderEmail"
-          type="email"
-          required
-          maxLength={500}
-          placeholder="Tu email"
-        />
-        <textarea
-          className="p-4 my-3 transition-all rounded-lg h-52 borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 dark:outline-none"
-          name="message"
-          placeholder="Tu mensaje"
-          required
-          maxLength={5000}
-        />
-        <SubmitBtn />
-      </form>
+              toast.success('Email enviado con éxito');
+            }}
+          >
+            <label className="text-[0.7rem] uppercase tracking-[0.16em] text-muted" htmlFor="senderEmail">
+              Tu email
+            </label>
+            <input
+              id="senderEmail"
+              className="mt-2 h-14 rounded-xl border border-[var(--line)] bg-transparent px-4 text-ink transition-shadow placeholder:text-muted/70 focus:shadow-[0_0_0_3px_var(--mint)]"
+              name="senderEmail"
+              type="email"
+              required
+              maxLength={500}
+              placeholder="nombre@empresa.com"
+            />
+            <label className="mt-4 text-[0.7rem] uppercase tracking-[0.16em] text-muted" htmlFor="message">
+              Tu mensaje
+            </label>
+            <textarea
+              id="message"
+              className="mt-2 h-44 rounded-xl border border-[var(--line)] bg-transparent p-4 text-ink transition-shadow placeholder:text-muted/70 focus:shadow-[0_0_0_3px_var(--mint)]"
+              name="message"
+              placeholder="Cuéntame el documento o el proceso"
+              required
+              maxLength={5000}
+            />
+            <div className="mt-5">
+              <SubmitBtn />
+            </div>
+          </form>
+        </div>
+      </div>
     </motion.section>
   );
 }
