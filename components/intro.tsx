@@ -4,13 +4,12 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { BsArrowUpRight, BsLinkedin } from 'react-icons/bs';
+import { BsLinkedin } from 'react-icons/bs';
 import { HiDownload } from 'react-icons/hi';
 import { FaWhatsapp } from 'react-icons/fa';
 
 import { useSectionInView } from '@/lib/hooks';
 import { useActiveSectionContext } from '@/context/active-section-context';
-import { projectsData } from '@/lib/data';
 import imagenProfile from '@/public/gera-podcast.JPG';
 
 const tags = ['#Legal Design', '#IP', '#Legaltech'];
@@ -80,13 +79,14 @@ export default function Intro() {
                   setActiveSection('Contacto');
                   setTimeOfLastClick(Date.now());
                 }}
-                className="group relative grid h-[8.25rem] w-[8.25rem] place-items-center rounded-full bg-ember text-center text-white transition-[background-color,box-shadow,transform] duration-300 hover:bg-ember-deep hover:shadow-plate hover:scale-[1.03]"
+                className="group flex h-[9.5rem] w-[9.5rem] flex-col items-center justify-center gap-1.5 rounded-full bg-ember px-3 text-center text-white transition-[background-color,box-shadow,transform] duration-300 hover:scale-[1.03] hover:bg-ember-deep hover:shadow-plate"
               >
-                <span className="px-4 text-[0.68rem] uppercase tracking-[0.16em] text-white/80">
-                  Describe tu proyecto
+                <span className="text-[0.62rem] font-medium uppercase leading-snug tracking-[0.14em] text-white/85">
+                  Describe tu
+                  <br />
+                  proyecto
                 </span>
-                <span className="font-display text-2xl leading-none">Conversemos</span>
-                <BsArrowUpRight className="absolute bottom-7 right-8 text-sm transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-1" />
+                <span className="font-display text-[1.35rem] leading-none">Conversemos</span>
               </Link>
 
               <div className="flex flex-col gap-3 text-sm">
@@ -122,28 +122,24 @@ export default function Intro() {
           </motion.div>
 
           <motion.div
-            className="relative mx-auto h-[28rem] w-[18rem] overflow-visible sm:h-[36rem] sm:w-[23rem] lg:h-[min(80vh,42rem)] lg:w-[min(54vh,28rem)]"
+            className="relative mx-auto"
             initial={{ opacity: 0, scale: 0.88, filter: 'blur(16px)' }}
             animate={enter ? { opacity: 1, scale: 1, filter: 'blur(0px)' } : undefined}
             transition={{ duration: 1.05, delay: 0.12, ease }}
           >
-            <div className="pointer-events-none absolute -inset-[22%] rounded-full bg-[radial-gradient(circle,var(--mint)_0%,transparent_64%)] opacity-90 lg:-inset-[32%] lg:opacity-100" />
-            <div className="pointer-events-none absolute left-1/2 top-[62%] h-[70%] w-[70%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,var(--field)_0%,transparent_72%)] opacity-30 blur-2xl lg:h-[85%] lg:w-[85%] lg:opacity-45" />
-            <motion.div
-              className="absolute bottom-0 left-1/2 h-[82%] w-[90%] -translate-x-1/2 rounded-[50%] border border-field/20"
-              animate={enter ? { scale: [1, 1.04, 1], opacity: [0.45, 0.85, 0.45] } : undefined}
-              transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-            />
-            <div className="absolute bottom-[2%] left-1/2 h-[78%] w-[84%] -translate-x-1/2 rounded-[50%] bg-paper shadow-plate" />
-            <Image
-              src={imagenProfile}
-              alt="Geraldine Rodríguez"
-              width={900}
-              height={1200}
-              quality={95}
-              priority
-              className="absolute -top-[8%] left-1/2 z-10 h-[108%] w-[118%] max-w-none -translate-x-1/2 rounded-[50%] object-cover object-[center_4%]"
-            />
+            <div className="pointer-events-none absolute -inset-[18%] rounded-[50%] bg-[radial-gradient(circle,var(--mint)_0%,transparent_64%)] opacity-90 lg:-inset-[28%] lg:opacity-100" />
+            <div className="pointer-events-none absolute left-1/2 top-[62%] h-[70%] w-[70%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(circle,var(--field)_0%,transparent_72%)] opacity-30 blur-2xl lg:h-[85%] lg:w-[85%] lg:opacity-45" />
+            <div className="relative aspect-[3/4] w-[17.5rem] overflow-hidden rounded-[50%] border-[14px] border-white shadow-plate sm:w-[21.5rem] sm:border-[18px] lg:w-[24rem]">
+              <Image
+                src={imagenProfile}
+                alt="Geraldine Rodríguez"
+                width={900}
+                height={1200}
+                quality={95}
+                priority
+                className="h-full w-full object-cover object-[center_10%]"
+              />
+            </div>
           </motion.div>
 
           <motion.aside
@@ -153,17 +149,6 @@ export default function Intro() {
             transition={{ duration: 0.85, delay: 0.32, ease }}
           >
             <Proof active={enter} delay={0} label="Años de ejercicio" value="5" />
-            <Proof
-              active={enter}
-              delay={0.45}
-              label="Proyectos publicados"
-              value={String(projectsData.length)}
-              href="#projects"
-              onNavigate={() => {
-                setActiveSection('Proyectos');
-                setTimeOfLastClick(Date.now());
-              }}
-            />
             <Proof
               active={enter}
               delay={0.9}
