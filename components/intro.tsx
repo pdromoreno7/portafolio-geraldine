@@ -10,7 +10,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 import { useSectionInView } from '@/lib/hooks';
 import { useActiveSectionContext } from '@/context/active-section-context';
-import imagenProfile from '@/public/gera-podcast.JPG';
+import imagenProfile from '@/public/gera-podcast.jpg';
 
 const tags = ['#Legal Design', '#IP', '#Legaltech'];
 const ease = [0.22, 1, 0.36, 1] as const;
