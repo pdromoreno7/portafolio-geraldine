@@ -38,7 +38,7 @@ export const metadata = {
       {
         url: '/og.jpg',
         width: 1200,
-        height: 976,
+        height: 1179,
         type: 'image/jpeg',
         alt: 'Pantalla de inicio de Geraldine Rodríguez, abogada y Legal Designer',
       },
