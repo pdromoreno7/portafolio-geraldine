@@ -10,7 +10,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 import { useSectionInView } from '@/lib/hooks';
 import { useActiveSectionContext } from '@/context/active-section-context';
-import imagenProfile from '@/public/gera-podcast.jpg';
+import imagenProfile from '@/public/profile-pic.JPG';
 
 const tags = ['#Legal Design', '#IP', '#Legaltech'];
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -137,7 +137,7 @@ export default function Intro() {
                 height={1200}
                 quality={95}
                 priority
-                className="h-full w-full object-cover object-[center_10%]"
+                className="h-full w-full object-cover object-[center_18%]"
               />
             </div>
           </motion.div>
