@@ -21,8 +21,10 @@ const sans = Outfit({
   variable: '--font-sans',
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://geraldine-rodriguez.vercel.app';
+
 export const metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://geraldinerodriguez.com'),
+  metadataBase: new URL(siteUrl),
   title: 'Geraldine Rodríguez | Legal Design',
   description: 'Abogada | Innovación en derecho digital y Legaltech | Legal Design | Propiedad intelectual',
   openGraph: {
@@ -30,11 +32,14 @@ export const metadata = {
     description: 'Abogada | Innovación en derecho digital y Legaltech | Legal Design | Propiedad intelectual',
     type: 'website',
     locale: 'es_CO',
+    url: '/',
+    siteName: 'Geraldine Rodríguez | Legal Design',
     images: [
       {
         url: '/og.jpg',
         width: 1200,
         height: 976,
+        type: 'image/jpeg',
         alt: 'Pantalla de inicio de Geraldine Rodríguez, abogada y Legal Designer',
       },
     ],
