@@ -129,7 +129,7 @@ export default function Intro() {
           >
             <div className="pointer-events-none absolute -inset-[18%] rounded-[50%] bg-[radial-gradient(circle,var(--mint)_0%,transparent_64%)] opacity-90 lg:-inset-[28%] lg:opacity-100" />
             <div className="pointer-events-none absolute left-1/2 top-[62%] h-[70%] w-[70%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(circle,var(--field)_0%,transparent_72%)] opacity-30 blur-2xl lg:h-[85%] lg:w-[85%] lg:opacity-45" />
-            <div className="relative aspect-[3/4] w-[17.5rem] overflow-hidden rounded-[50%] border-[14px] border-white shadow-plate sm:w-[21.5rem] sm:border-[18px] lg:w-[24rem]">
+            <div className="relative aspect-[3/4] w-[19.5rem] overflow-hidden rounded-[50%] border-[14px] border-white shadow-plate sm:w-[24rem] sm:border-[18px] lg:w-[28rem]">
               <Image
                 src={imagenProfile}
                 alt="Geraldine Rodríguez"

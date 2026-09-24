@@ -28,13 +28,22 @@ export const metadata = {
   openGraph: {
     title: 'Geraldine Rodríguez | Legal Design',
     description: 'Abogada | Innovación en derecho digital y Legaltech | Legal Design | Propiedad intelectual',
-    images: ['/gera-medellin.jpg'],
+    type: 'website',
+    locale: 'es_CO',
+    images: [
+      {
+        url: '/og.jpg',
+        width: 1200,
+        height: 976,
+        alt: 'Pantalla de inicio de Geraldine Rodríguez, abogada y Legal Designer',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Geraldine Rodríguez | Legal Design',
     description: 'Abogada | Innovación en derecho digital y Legaltech | Legal Design | Propiedad intelectual',
-    images: ['/gera-medellin.jpg'],
+    images: ['/og.jpg'],
   },
 };
 
