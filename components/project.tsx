@@ -1,71 +1,45 @@
-"use client";
+'use client';
 
-import { useRef } from "react";
-import { projectsData } from "@/lib/data";
-import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from 'react';
+import { projectsData } from '@/lib/data';
+import Image from 'next/image';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
-type ProjectProps = (typeof projectsData)[number];
+type ProjectProps = (typeof projectsData)[number] & { index: number };
 
-export default function Project({
-  title,
-  description,
-  tags,
-  imageUrl,
-}: ProjectProps) {
+export default function Project({ title, description, imageUrl, index }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["0 1", "1.33 1"],
+    offset: ['0 1', '1.2 1'],
   });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const y = useTransform(scrollYProgress, [0, 1], [48, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.55, 1]);
+  const reverse = index % 2 === 1;
 
   return (
-    <motion.div
+    <motion.article
       ref={ref}
-      style={{
-        scale: scaleProgess,
-        opacity: opacityProgess,
-      }}
-      className="mb-3 group sm:mb-8 last:mb-0"
+      style={{ y, opacity }}
+      className="group grid overflow-hidden rounded-[1.75rem] border border-[var(--line)] bg-paper md:grid-cols-2"
     >
-      <section className="bg-gray-100 max-h-[50rem] sm:h-auto max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative  hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
-        <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
-          <h3 className="text-2xl font-semibold">{title}</h3>
-          <div className="leading-relaxed text-gray-700 my-7 dark:text-white/70 whitespace-pre-line">
-            {description}
-          </div>
-          <ul className="flex flex-wrap gap-2 mt-4 sm:mt-auto">
-            {tags.map((tag, index) => (
-              <li
-                className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
-                key={index}
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
+      <div className={`flex flex-col justify-between gap-8 p-6 sm:p-10 ${reverse ? 'md:order-2' : ''}`}>
+        <div>
+          <p className="text-[0.7rem] uppercase tracking-[0.18em] text-field">Legal Design</p>
+          <h3 className="mt-3 font-display text-[1.7rem] leading-[1.15] tracking-tight sm:text-[2.05rem]">{title}</h3>
+          <p className="mt-5 max-w-[58ch] leading-7 text-muted">{description}</p>
         </div>
+        <div className="h-px w-16 bg-field transition-all duration-300 group-hover:w-28" />
+      </div>
 
+      <div className="relative min-h-[16rem] overflow-hidden bg-mint">
         <Image
           src={imageUrl}
-          alt="Project I worked on"
+          alt={title}
           quality={95}
-          className="sm:absolute  sm:block sm:top-8 sm:-right-40 sm:w-[28.25rem] sm:rounded-lg sm:shadow-2xl
-        transition 
-        group-hover:scale-[1.04]
-        group-hover:-translate-x-3
-        group-hover:translate-y-3
-        group-hover:-rotate-2
-
-        group-even:group-hover:translate-x-3
-        group-even:group-hover:translate-y-3
-        group-even:group-hover:rotate-2
-
-        group-even:right-[initial] group-even:-left-40"
+          className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
         />
-      </section>
-    </motion.div>
+      </div>
+    </motion.article>
   );
 }
